@@ -1,5 +1,3 @@
-# NOT USED YET
-
 import configparser
 
 

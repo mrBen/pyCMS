@@ -3,6 +3,7 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
 from Cleaner import Cleaner
+from models.Conf import Conf
 from Settings import Settings
 
 
@@ -36,8 +37,9 @@ class CMS(Gtk.Window):
         self.stack.add_named(cleaner, 'cleaner')
 
         # settings
-        settings = Settings(self)
-        self.stack.add_named(settings, 'settings')
+        self.config = Conf()
+        self.settings = Settings(self)
+        self.stack.add_named(self.settings, 'settings')
 
     # packing
         layout.pack_start(menu, False, True, 0)
