@@ -12,6 +12,7 @@ class CMS(Gtk.Window):
     def __init__(self):
         Gtk.Window.__init__(self, title='Clean My Shit')
         self.connect('delete-event', Gtk.main_quit)
+        self.set_icon_name('video-x-generic')
 
         layout = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
