@@ -19,10 +19,10 @@ class Conf():
         self.movies_filename = config.get('movies', 'filename',
             fallback='{title} ({year})')
 
-        self.series_directory = config.get('series', 'directory',
-            fallback='$HOME/Videos/series')
-        self.series_filename = config.get('series', 'filename',
-            fallback='{ShowName}/Season {XX}/{ShowName} - s{XX}e{YY} - {Optional_Info}')
+        # self.series_directory = config.get('series', 'directory',
+        #     fallback='$HOME/Videos/series')
+        # self.series_filename = config.get('series', 'filename',
+        #     fallback='{ShowName}/Season {XX}/{ShowName} - s{XX}e{YY} - {Optional_Info}')
 
     def save(self):
         config = configparser.ConfigParser()
@@ -35,9 +35,9 @@ class Conf():
         config['movies']['directory'] = self.movies_directory
         config['movies']['filename'] = self.movies_filename
 
-        config['series'] = {}
-        config['series']['directory'] = self.series_directory
-        config['series']['filename'] = self.series_filename
+        # config['series'] = {}
+        # config['series']['directory'] = self.series_directory
+        # config['series']['filename'] = self.series_filename
 
         with open(Conf.path, 'w') as configfile:
             config.write(configfile)
